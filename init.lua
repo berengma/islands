@@ -128,7 +128,6 @@ local c_sand_dark = minetest.get_content_id("islands:seabed")
 local c_dirt = minetest.get_content_id("default:dirt")
 local c_dirt_g = minetest.get_content_id("default:dirt_with_grass")
 local c_dirt_l = minetest.get_content_id("default:dirt_with_rainforest_litter")
-local c_snow = minetest.get_content_id("default:dirt_with_snow")
 local c_water     = minetest.get_content_id("default:water_source")
 
 
@@ -243,7 +242,7 @@ minetest.register_on_generated(function(minp, maxp, seed)
 				if theight > y then
 					data[vi] = c_stone
 				elseif y==ceil(theight) then
-					data[vi]= y < -3 and c_sand_dark or y<4 and c_sand or (y<60-random(3) and dirt or c_snow)
+					data[vi]= y < -3 and c_sand_dark or y<4 and c_sand or (y<60-random(3) and dirt or c_stone)
 				elseif y <= 1 then
 					data[vi] = c_water
 				end
